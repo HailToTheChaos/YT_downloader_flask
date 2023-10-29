@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Descargar Video de YouTube</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>YouTube Downloader</h1>
+        <div id="tabs">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#video-tab">Descargar Video</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#mp3-tab">Descargar MP3</a>
+                </li>
+            </ul>
+            <div class="tab-content">
+                <div id="video-tab" class="tab-pane fade show active">
+                    <form method="POST" id="download-form">
+                        <input type="text" name="youtube_url" id="youtube_url"
+                            placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" required>
+                        <label for="resolution">Resolución: </label>
+                        <select name="resolution-select" id="resolution-select">
+                            <option value="1080p">1080px</option>
+                            <option value="720p" selected>720px</option>
+                            <option value="480p">480px</option>
+                            <option value="360p">360px</option>
+                        </select>
+                        <button type="submit" class="btn btn-primary">Descargar</button>
+                    </form>
+                </div>
+                <div id="mp3-tab" class="tab-pane fade">
+                    <form method="POST" action="{{ url_for('download_mp3') }}" id="download-mp3-form">
+                        <input type="text" name="youtube_url" id="youtube_url_mp3"
+                            placeholder="https://www.youtube.com/watch?v=dQw4w9WgXcQ" required>
+                        <button type="submit" class="btn btn-primary">Descargar MP3</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- Agrega una sección para errores -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="alert-container">
+            {% for category, message in messages %}
+            <p class="{% if category == 'success' %}alert-success{% else %}alert-danger{% endif %}">
+                {{ message }}
+            </p>
+            {% endfor %}
+        </div>
+        {% endif %}
+        {% endwith %}
+    </div>
+</body>
+
+</html>

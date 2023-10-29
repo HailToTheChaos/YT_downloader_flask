@@ -1,0 +1,135 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilo para el encabezado */
+h1 {
+    padding: 1em;
+    background: #343a40;
+    /* Un tono oscuro para el encabezado */
+    color: #ffffff;
+    /* Texto en color blanco */
+    margin: 0;
+    /* Elimina el margen predeterminado */
+}
+
+/* Contenedor principal */
+.container {
+    max-width: 800px;
+    /* Ancho máximo para el contenido */
+    margin: 0 auto;
+    /* Centra el contenido en la página */
+    padding: 20px;
+}
+
+/* Formulario */
+form {
+    text-align: center;
+    /* Centra los elementos del formulario */
+    margin-top: 20px;
+}
+
+/* Estilo para los campos de entrada */
+input[type=text] {
+    border: 2px solid #ccc;
+    /* Borde más delgado y color gris claro */
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    /* Ocupa todo el ancho disponible */
+    box-sizing: border-box;
+    /* Evita que el ancho se desborde por el relleno y el borde */
+    margin-bottom: 10px;
+    /* Agrega un margen inferior entre los campos */
+}
+
+/* Estilo para el botón de envío */
+button[type=submit] {
+    padding: 10px 20px;
+    border: none;
+    color: white;
+    background-color: #007bff;
+    /* Un color azul brillante */
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilo para los mensajes flash */
+.flash-message {
+    background-color: #28a745;
+    /* Color de fondo verde para mensajes de éxito */
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+/* Estilo para errores */
+.error-message {
+    background-color: #dc3545;
+    /* Color de fondo rojo para mensajes de error */
+}
+
+/* Estilo para el enlace de descarga */
+.download-link {
+    display: block;
+    margin-top: 10px;
+    font-size: 18px;
+    text-decoration: none;
+    color: #007bff;
+}
+
+/* Estilo para las pestañas */
+#tabs {
+    margin-top: 20px;
+}
+
+.nav-tabs .nav-link {
+    border: 1px solid #dee2e6;
+    border-radius: 4px 4px 0 0;
+    color: black;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #f8f9fa;
+    border: 1px solid #007bff;
+    border-bottom-color: transparent;
+    color: #007bff;
+}
+
+.tab-content {
+    border: 1px solid #dee2e6;
+    border-radius: 0 0 4px 4px;
+    padding: 20px;
+}
+
+/* Estilo para la barra de progreso */
+.progress {
+    margin-top: 20px;
+}
+
+/* Estilo para la barra de progreso en formato MP3 */
+.progress-mp3 {
+    margin-top: 20px;
+}
+
+alert-container {
+    width: 100%;
+}
+
+/* Estilo para mensajes de éxito (verde) */
+.alert-success {
+    color: white;
+    background-color: green;
+
+}
+
+/* Estilo para mensajes de error o peligro (rojo) */
+.alert-danger {
+    color: white;
+    background-color: red;
+}
